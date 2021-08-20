@@ -1,0 +1,44 @@
+{
+  "name": "gcmm",
+  "version": "1.0.0",
+  "bin": "dist/cli.js",
+  "scripts": {
+    "dev": "tsup ./src/cli.ts ./src/perf-worker.ts --watch src",
+    "build": "tsup ./src/cli.ts ./src/perf-worker.ts --clean",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "repository": "git@github.com:sishenhei7/gcmm.git",
+  "author": "yangzhou <zhou.yang@klook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@types/clui": "^0.3.1",
+    "@types/node": "^16.6.2",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "conventional-changelog-cli": "^2.1.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
+  }
+}
