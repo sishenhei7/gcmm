@@ -1,0 +1,2 @@
+# gcmm
+git config manager
