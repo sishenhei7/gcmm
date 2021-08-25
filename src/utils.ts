@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 import figlet from 'figlet'
 import { Command } from 'commander'
-import leven from './leven'
+import leven from 'leven'
 
 export function drawBanner(text: string) {
   console.log(chalk.yellow(figlet.textSync(text, { horizontalLayout: 'full' })))
@@ -27,17 +27,5 @@ export function camelize(str: string) {
   return str.replace(/-(\w)/g, (_: string, c: string) => (c ? c.toUpperCase() : ''))
 }
 
-// export function cleanArgs(cmd: Command) {
-//   const args = {} as Record<string, any>
-//   cmd.options.forEach((o: Option) => {
-//     const key = camelize(o.long.replace(/^--/, ''))
-//     // if an option is not present and Command has a method with the same name
-//     // it should not be copied
-//     if (typeof cmd[key] !== 'function' && typeof cmd[key] !== 'undefined') {
-//       args[key] = cmd[key]
-//     }
-//   })
-//   return args
-// }
 
 

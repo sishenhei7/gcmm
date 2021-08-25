@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "bin": "dist/cli.js",
   "scripts": {
-    "dev": "tsup ./src/cli.ts --watch src",
-    "build": "tsup ./src/cli.ts --clean",
+    "dev": "tsup ./src/cli.ts --watch src --format esm",
+    "build": "tsup ./src/cli.ts --clean --format esm",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
@@ -21,6 +21,7 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "type": "module",
   "repository": "git@github.com:sishenhei7/gcmm.git",
   "author": "yangzhou <zhou.yang@klook.com>",
   "license": "MIT",

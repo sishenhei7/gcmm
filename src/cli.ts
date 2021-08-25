@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import chalk from 'chalk'
 import { Command } from 'commander'
-import { ActionAdd, ActionLs, ActionUse, ActionRemove } from './actions'
+import { actionAdd, actionLs, actionUse, actionRemove } from './actions'
 import { drawBanner, suggestCommands } from './utils'
 
 drawBanner('GCMM')
@@ -9,43 +9,30 @@ drawBanner('GCMM')
 const program = new Command()
 program.version(`gcmm ${require('../package.json').version}`).usage('<command> [options]')
 
+// prettier-ignore
 program
-  .command('add')
+  .command('add <name> <email>')
   .description('Add one custom git registry')
-  // .option('-t, --template <templateName>', 'Template name for the project')
-  .action(async (cmd: Command) => {
-    const options = cmd.opts()
-    console.log('options', options)
-    const creator = new ActionAdd()
-    await creator.run()
-  })
+  .action(actionAdd)
 
+// prettier-ignore
 program
   .command('ls')
   .description('List all the git registries')
-  .action(async (cmd: Command) => {
-    // const options = cleanArgs(cmd)
-    const creator = new ActionLs()
-    await creator.run()
-  })
+  .action(actionLs)
 
+// prettier-ignore
 program
-  .command('use')
+  .command('use <name>')
   .description('Change registry to registry')
-  .action(async (cmd: Command) => {
-    // const options = cleanArgs(cmd)
-    const creator = new ActionUse()
-    await creator.run()
-  })
+  .option('-g, --global', 'Whether the command is global')
+  .action(actionUse)
 
+// prettier-ignore
 program
-  .command('remove')
+  .command('remove <name>')
   .description('Remove one custom registry')
-  .action(async (cmd: Command) => {
-    // const options = cleanArgs(cmd)
-    const creator = new ActionRemove()
-    await creator.run()
-  })
+  .action(actionRemove)
 
 // output help information on unknown commands
 program.arguments('<command>').action((cmd: Command) => {
