@@ -7,7 +7,7 @@ export function drawBanner(text: string) {
   console.log(chalk.yellow(figlet.textSync(text, { horizontalLayout: 'full' })))
 }
 
-export function suggestCommands(commands: Command['commands'], unknownCommand: Command) {
+export function suggestCommands(commands: Command['commands'], unknownCommand: string) {
   let suggestion = ''
 
   const availableCommands = commands.map(cmd => cmd.name())

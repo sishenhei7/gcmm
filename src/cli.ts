@@ -34,7 +34,7 @@ program
   .action(actionRemove)
 
 // output help information on unknown commands
-program.arguments('<command>').action((cmd: Command) => {
+program.arguments('<command>').action((cmd: string) => {
   program.outputHelp()
   console.log(`  ` + chalk.red(`Unknown command ${chalk.yellow(cmd)}.`))
   console.log()
