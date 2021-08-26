@@ -1,6 +1,7 @@
 {
   "name": "gcmm",
   "version": "1.0.1",
+  "description": "Git config manager",
   "type": "module",
   "bin": "dist/cli.js",
   "scripts": {
@@ -25,8 +26,15 @@
   "engines": {
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
-  "repository": "git@github.com:sishenhei7/gcmm.git",
-  "author": "yangzhou <zhou.yang@klook.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sishenhei7/gcmm.git"
+  },
+  "homepage": "https://github.com/sishenhei7/gcmm#readme",
+  "bugs": {
+    "url": "https://github.com/sishenhei7/gcmm/issues"
+  },
+  "author": "yangzhou",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
