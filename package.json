@@ -9,6 +9,7 @@
     "build": "tsup ./src/cli.ts --clean --format esm",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
+    "prepublishOnly": "yarn build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "lint-staged": {
