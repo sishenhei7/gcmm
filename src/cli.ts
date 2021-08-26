@@ -24,6 +24,7 @@ program
   .command('use <alias>')
   .description('Change registry to registry')
   .option('-g, --global', 'Whether the command is global')
+  .option('-r, --replace', 'Whether to replace all')
   .action(actionUse)
 
 // prettier-ignore

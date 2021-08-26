@@ -30,12 +30,13 @@ export async function actionLs() {
   log(infos)
 }
 
-export function actionUse(alias: string, { global = false }) {
+export function actionUse(alias: string, { global = false, replace = false }) {
   if (store.has(alias)) {
     const { name, email } = JSON.parse(store.get(alias))
-    const prefix = global ? ' --global' : ''
-    execSync(`git config ${prefix} user.name ${name}`)
-    execSync(`git config ${prefix} user.email ${email}`)
+    const globalMsg = global ? ' --global ' : ''
+    const replaceMsg = replace ? ' --replace-all ' : ''
+    execSync(`git config ${globalMsg}${replaceMsg}user.name ${name}`)
+    execSync(`git config ${globalMsg}${replaceMsg}user.email ${email}`)
     log(['', `Git config has been set to ${name} ${email}${global ? ' globally' : ''}`, ''])
   }
 }
