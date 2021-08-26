@@ -33,10 +33,10 @@ export async function actionLs() {
 export function actionUse(alias: string, { global = false }) {
   if (store.has(alias)) {
     const { name, email } = JSON.parse(store.get(alias))
-    const suffix = global ? ' -g' : ''
-    execSync(`git config user.name ${name}${suffix}`)
-    execSync(`git config user.email ${email}${suffix}`)
-    log(['', `Git config has been set to ${name} ${email}`, ''])
+    const prefix = global ? ' --global' : ''
+    execSync(`git config ${prefix} user.name ${name}`)
+    execSync(`git config ${prefix} user.email ${email}`)
+    log(['', `Git config has been set to ${name} ${email}${global ? ' globally' : ''}`, ''])
   }
 }
 
