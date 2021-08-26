@@ -2,16 +2,14 @@
 import chalk from 'chalk'
 import { Command } from 'commander'
 import { actionAdd, actionLs, actionUse, actionRemove } from './actions'
-import { drawBanner, suggestCommands } from './utils'
-
-drawBanner('GCMM')
+import { suggestCommands } from './utils'
 
 const program = new Command()
 program.version(`gcmm ${require('../package.json').version}`).usage('<command> [options]')
 
 // prettier-ignore
 program
-  .command('add <name> <email>')
+  .command('add <alias> <name> <email>')
   .description('Add one custom git registry')
   .action(actionAdd)
 
@@ -23,14 +21,14 @@ program
 
 // prettier-ignore
 program
-  .command('use <name>')
+  .command('use <alias>')
   .description('Change registry to registry')
   .option('-g, --global', 'Whether the command is global')
   .action(actionUse)
 
 // prettier-ignore
 program
-  .command('remove <name>')
+  .command('remove <alias>')
   .description('Remove one custom registry')
   .action(actionRemove)
 
