@@ -1,6 +1,7 @@
 {
   "name": "gcmm",
   "version": "1.0.0",
+  "type": "module",
   "bin": "dist/cli.js",
   "scripts": {
     "dev": "tsup ./src/cli.ts --watch src --format esm",
@@ -21,7 +22,9 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "type": "module",
+  "engines": {
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+	},
   "repository": "git@github.com:sishenhei7/gcmm.git",
   "author": "yangzhou <zhou.yang@klook.com>",
   "license": "MIT",
