@@ -10,32 +10,32 @@ demo@demo:~$ gcmm ls
 demo@demo:~$ gcmm add klook yangzhou zhou.yang@klook.com
 Add klook: yangzhou zhou.yang@klook.com success!
 
-demo@demo:~$ gcmm add github sishenhei7 982505136@qq.com
-Add github: sishenhei7 982505136@qq.com success!
+demo@demo:~$ gcmm add github sishenhei7 1417145026@qq.com
+Add github: sishenhei7 1417145026@qq.com success!
 
 demo@demo:~$ gcmm ls
 klook:   yangzhou ---- zhou.yang@klook.com
-github:  sishenhei7 -- 982505136@qq.com
+github:  sishenhei7 -- 1417145026@qq.com
 
 demo@demo:~$ gcmm use klook
 Git config has been set to yangzhou zhou.yang@klook.com
 
 demo@demo:~$ gcmm ls
 * klook:   yangzhou ---- zhou.yang@klook.com
-  github:  sishenhei7 -- 982505136@qq.com
+  github:  sishenhei7 -- 1417145026@qq.com
 
 demo@demo:~$ gcmm use github
-Git config has been set to sishenhei7 982505136@qq.com
+Git config has been set to sishenhei7 1417145026@qq.com
 
 demo@demo:~$ gcmm ls
   klook:   yangzhou ---- zhou.yang@klook.com
-* github:  sishenhei7 -- 982505136@qq.com
+* github:  sishenhei7 -- 1417145026@qq.com
 
 demo@demo:~$ gcmm remove klook
 Delete klook success!
 
 demo@demo:~$ gcmm ls
-* github:  sishenhei7 -- 982505136@qq.com
+* github:  sishenhei7 -- 1417145026@qq.com
 ```
 
 ## tips
